@@ -23,7 +23,7 @@ While `x-oca-asset` specifies the host on which the associated event occurred, i
 | ingress | `dictionary` | Specifies information like interface number and name, vlan, and zone information to classify ingress traffic. Each dictionary key SHOULD come from the Traffic vocabulary.|
 | egress | `dictionary` | Specifies information like interface number and name, vlan, and zone information to classify egress traffic. Each dictionary key SHOULD come from the Traffic vocabulary.|
 
-### Container Extenstion
+### Container Extension
 
 The container asset extension represents a container.
 
@@ -32,10 +32,18 @@ The container asset extension represents a container.
 | type | `string` | x-oca-container-ext |
 | name | `string` | container name |
 | id | `string` | container id |
-| image_name | `string` | container image name |
-| image_id | `string` | container image id |
+| labels | list of `string` | container labels |
+| image | `dictionary` | container image. Each dictionary key SHOULD come from the Container Image vocabulary. |
 | container_type | `container_type_ov` | container type | 
 | privileged | `boolean` | indicates a priviliged container |
+
+### Container Image Vocabulary
+
+| value | type | description |
+|--|--|--|
+| id | `string` | container image id. |
+| name | `string` | Name of the image the container was built on. |
+| tags | list of `string` | container image tags.|
 
 #### Container Type Vocabluary
 
